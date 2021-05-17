@@ -78,16 +78,11 @@ function renderThreeImages() {
     do {
         rightImgIndex=generateRandomIndex();
         centerImgIndex = generateRandomIndex();
-        
+
     } while (rightImgIndex === centerImgIndex || rightImgIndex === leftImgIndex || centerImgIndex ===leftImgIndex); 
   
 
-for (let i = 0; i <imageArray.length; i++) {
-    
-   
-    // imageArray.push(allimages[i].name)
-}
-       
+  
 
 leftImgElement.src=allimages[leftImgIndex].path;
 rightImgElement.src=allimages[rightImgIndex].path;

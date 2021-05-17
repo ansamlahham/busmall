@@ -64,21 +64,11 @@ function renderThreeImages() {
     rightImgIndex = generateRandomIndex();
     centerImgIndex = generateRandomIndex();
 
-    // console.log(leftImgIndex);
-    // console.log(rightImgIndex);
-    // console.log(centerImgIndex);
-
-    // if (rightImgIndex !== centerImgIndex  && rightImgIndex !== leftImgIndex && centerImgIndex !==leftImgIndex) {
-
-    //     rightImgIndex=generateRandomIndex();
-
-    // } else
-
-    // if (rightImgIndex !== centerImgIndex  && rightImgIndex !== leftImgIndex && centerImgIndex !==leftImgIndex) {
-    //     rightImgIndex=generateRandomIndex();
-    // }
+   
     do {
         rightImgIndex=generateRandomIndex();
+        centerImgIndex = generateRandomIndex();
+        // leftImgElement=generateRandomIndex();
     } while (rightImgIndex === centerImgIndex || rightImgIndex === leftImgIndex || centerImgIndex ===leftImgIndex); 
     //     // && (leftImgIndex!==centerImgIndex )
         // && (centerImgIndex!==rightImgIndex )
@@ -121,16 +111,19 @@ leftImgElement.removeEventListener('click' , handClick);
 centerImgElement.removeEventListener('click', handClick);
 rightImgElement.removeEventListener('click' , handClick);
 
-let list = document.getElementById('list');
+let list = document.getElementById('results');
+let btn = document.getElementById('btn');
+btn.addEventListener('click',results);
+function results(){
 
-let listElement ;
+let liElement ;
 for (let i= 0; i < allimages.length; i++) {
-    listElement = document.createElement('li');
-    list.appendChild(listElement);
-    listElement.textContent= `Image ${i} : ${allimages[i].name}  has ${allimages[i].votes} votes`;
+    liElement = document.createElement('li');
+    list.appendChild(liElement);
+    liElement.textContent= `Image ${i} : ${allimages[i].name} has ${allimages[i].votes} votes`;
 
      }
-
+    }
 }
 }
 

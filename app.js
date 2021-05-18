@@ -106,6 +106,15 @@ renderThreeImages();
 }
         renderThreeImages();
     
+// let counterForm = document.getElementById('counterForm ');
+// counterForm.addEventListener('submit', theNumber);
+
+// function theNumber(event) {
+//     event.preventDefault();
+//     maxAttempts=event.target.round.value;
+// }
+
+
 }else { 
 leftImgElement.removeEventListener('click' , handClick);
 centerImgElement.removeEventListener('click', handClick);
@@ -114,6 +123,7 @@ rightImgElement.removeEventListener('click' , handClick);
 let list = document.getElementById('results');
 let btn = document.getElementById('btn');
 btn.addEventListener('click',results);
+
 function results(){
 
 let liElement ;

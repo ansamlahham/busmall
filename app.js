@@ -121,10 +121,28 @@ renderThreeImages();
 }
         renderThreeImages();
     
+
 }else { 
 leftImgElement.removeEventListener('click' , handClick);
 centerImgElement.removeEventListener('click', handClick);
 rightImgElement.removeEventListener('click' , handClick);
+
+
+
+let list = document.getElementById('results');
+let btn = document.getElementById('btn');
+btn.addEventListener('click',results);
+
+function results(){
+
+let liElement ;
+for (let i= 0; i < allimages.length; i++) {
+    liElement = document.createElement('li');
+    list.appendChild(liElement);
+    liElement.textContent= `Image ${i} : ${allimages[i].name} has ${allimages[i].votes} votes`;
+
+     }
+    }
 
 // let list = document.getElementById('results');
 // let btn = document.getElementById('btn');
@@ -143,6 +161,7 @@ for (let i= 0; i< allimages.length; i++) {
     picturesVotes.push(allimages[i].votes);
     picturesShowen.push(allimages[i].show);
     
+
 }
 theChart();
 }
@@ -187,5 +206,11 @@ let myChart = new Chart(ctx, {
     }
 });
 
+
+// console.log (allimages);
+
+
+
     
 }
+

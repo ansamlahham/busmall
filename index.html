@@ -12,19 +12,23 @@
     <header>
         <h1>Bus Mall</h1>
     </header>
-    <main>
-        <div id="list"> 
+    <div id="counterForm">
+        <form action="">
+            <label for="round">please enter round number you want</label>
+            <input type="number" id="roundNumber" name="roundNumber" placeholder="Enter the number of rounds?">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+        <div id="list"></div>
         <img id = "left-img" src="" alt=""/>
         <img id = "right-img" src="" alt=""/>
         <img id = "center-img" src="" alt=""/>
-    </div>
+
     
     <div id="results"></div>
 <button id="btn">Results</button>
+
 <div><canvas id="myChart" width="150px" height="150px"></canvas></div>
-
-
-
 <p>
     Lorem ipsum dolor sit amet consectetur adipisicing 
         Et sunt ratione voluptate id, <br>doloribus incidunt nulla veniam quidem maxime placeat,<br>
@@ -34,7 +38,7 @@
         provident illo <br>perspiciatis molestiae doloribus delectus dignissimos,
          deserunt in quos eos veritatis labore?
 </p>
-    </main>
+    
     <footer>
         <div>
             <p>Footer</p>
@@ -42,5 +46,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
+    <script src="localstorage.js"></script>
 </body>
 </html>

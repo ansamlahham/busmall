@@ -34,12 +34,20 @@ function MallImage(name ,path){
 
 allimages.push(this);
 picturesName.push(this.name);
+itemSets();
+
+}
+
+function itemSets() {
+  
+    let data = JSON.stringify(allimages);
+ 
+    localStorage.setItem('Product', JSON.stringify(allimages));
 }
 
 
 
-// let imageArray = [leftImgElement,centerImgElement,rightImgElement];
-// console.log (imageArray);
+console.log(itemSets);
 
 
 new MallImage('bag','img/bag.jpg');
@@ -61,7 +69,7 @@ new MallImage('tauntaun','img/tauntaun.jpg');
 new MallImage('unicorn','img/unicorn.jpg');
 new MallImage('water-can','img/water-can.jpg');
 new MallImage('wine-glass','img/wine-glass.jpg');
-console.log(allimages);
+// console.log(allimages);
 
 
 function generateRandomIndex() {
@@ -82,13 +90,6 @@ function renderThreeImages() {
     } while (rightImgIndex === centerImgIndex || rightImgIndex === leftImgIndex || centerImgIndex ===leftImgIndex); 
   
 
-for (let i = 0; i <imageArray.length; i++) {
-    
-   
-    // imageArray.push(allimages[i].name)
-}
-       
-
 leftImgElement.src=allimages[leftImgIndex].path;
 rightImgElement.src=allimages[rightImgIndex].path;
 centerImgElement.src=allimages[centerImgIndex].path;
@@ -99,6 +100,18 @@ allimages[centerImgIndex].show++;
 }
 
 renderThreeImages();
+
+let counterForm = document.getElementById('counterForm');
+counterForm.addEventListener('submit', theNumber);
+function theNumber(event) {
+    event.preventDefault();
+    if (maxAttempts === null){
+        maxAttempts=25;
+    }else{
+        maxAttempts=event.target.roundNumber.value;
+    }
+}
+
 
  //event listener
 
@@ -131,19 +144,19 @@ leftImgElement.removeEventListener('click' , handClick);
 centerImgElement.removeEventListener('click', handClick);
 rightImgElement.removeEventListener('click' , handClick);
 
-// let list = document.getElementById('results');
-// let btn = document.getElementById('btn');
-// btn.addEventListener('click',results);
-// function results(){
+let list = document.getElementById('results');
+let btn = document.getElementById('btn');
+btn.addEventListener('click',results);
+function results(){
 
-// let liElement ;
-// for (let i= 0; i < allimages.length; i++) {
-//     liElement = document.createElement('li');
-//     list.appendChild(liElement);
-//     liElement.textContent= `Image ${i} : ${allimages[i].name} has ${allimages[i].votes} votes`;
+let liElement ;
+for (let i= 0; i < allimages.length; i++) {
+    liElement = document.createElement('li');
+    list.appendChild(liElement);
+    liElement.textContent= `Image ${i} : ${allimages[i].name} has ${allimages[i].votes} votes`;
 
-//      }
-//     }
+     }
+    }
 for (let i= 0; i< allimages.length; i++) {
     picturesVotes.push(allimages[i].votes);
     picturesShowen.push(allimages[i].show);
@@ -159,7 +172,7 @@ theChart();
 function theChart() {
     let ctx = document.getElementById('myChart').getContext('2d');
 let myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
         labels: picturesName,
         datasets: [{
@@ -194,3 +207,7 @@ let myChart = new Chart(ctx, {
 
     
 }
+
+
+
+

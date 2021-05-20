@@ -1,6 +1,7 @@
 'use strict' ;
 
 // global 
+
 let allimages = [];
 
 
@@ -77,6 +78,8 @@ function generateRandomIndex() {
     
 }
 
+//render function //
+
 function renderThreeImages() {
     leftImgIndex = generateRandomIndex();
     rightImgIndex = generateRandomIndex();
@@ -147,8 +150,6 @@ centerImgElement.removeEventListener('click', handClick);
 rightImgElement.removeEventListener('click' , handClick);
 
 
-
-
 let list = document.getElementById('results');
 let btn = document.getElementById('btn');
 btn.addEventListener('click',results);
@@ -176,7 +177,7 @@ theChart();
 
 // console.log (allimages);
 
-
+//chart function
 function theChart() {
     let ctx = document.getElementById('myChart').getContext('2d');
 let myChart = new Chart(ctx, {

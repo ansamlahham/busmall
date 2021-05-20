@@ -92,3 +92,18 @@ font-weight: bold;
 margin: 10px;
   
 }
+
+#counterForm {
+
+    padding-top: 15px;
+    color: #a0937d;
+    font-size: 25px;
+    font-family: cursive;
+}
+ 
+div input {
+    color: #a0937d;
+    font-size: 25px;
+    font-family: cursive;
+
+}
